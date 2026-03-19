@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flagro-Art Club of IISER BPR</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind config & CSS -->
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="homepage.css">
+  </head>
+  <body class="h-full">
+    <div class="app-root" id="appRoot">
+
+      <!-- NAVBAR -->
+      <nav id="navbar" class="sticky top-0 z-50 backdrop-blur-md bg-beige/80" style="height:72px;">
+        <div class="max-w-[1200px] mx-auto px-6 h-full flex items-center justify-between">
+          <a href="#" class="font-heading text-bark text-xl font-bold tracking-wide" id="navLogo">Flagro</a>
+          <div class="flex items-center gap-8">
+            <a href="About.html" class="nav-link font-body text-bark text-sm font-medium">About</a>
+            <a href="#events" class="nav-link font-body text-bark text-sm font-medium">Events</a>
+            <a href="#contact" class="nav-link font-body text-bark text-sm font-medium">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- HERO SECTION WITH IMAGE SLIDER -->
+      <header class="relative" style="height:720px; overflow:hidden;">
+        <!-- Image slider background -->
+        <div id="sliderContainer" style="position:absolute; inset:0; z-index:0;">
+          <div id="sliderTrack" style="width:100%; height:100%; display:flex; position:relative;"></div>
+          <div class="slider-overlay"></div>
+        </div>
+
+        <!-- Fixed overlay content -->
+        <div class="relative z-10 flex items-center justify-center h-full pointer-events-none">
+          <div class="text-center max-w-[700px] mx-auto px-6 pointer-events-auto">
+            <div class="anim-fade mb-6">
+              <svg width="72" height="72" viewBox="0 0 72 72" class="mx-auto">
+                <circle cx="36" cy="36" r="34" fill="none" stroke="#C8745A" stroke-width="2"/>
+                <text x="36" y="42" text-anchor="middle" font-family="Playfair Display, serif" font-size="28" font-weight="700" fill="#C8745A">F</text>
+              </svg>
+            </div>
+            <h1 id="heroTitle" class="font-heading text-white anim-fade anim-delay-1"
+              style="font-size:64px; font-weight:700; line-height:1.1; text-shadow: 0 4px 12px rgba(0,0,0,0.4);">Flagro</h1>
+            <p id="heroTagline" class="font-body text-white mt-5 anim-fade anim-delay-2"
+              style="font-size:16px; line-height:1.7; max-width:520px; margin-left:auto; margin-right:auto; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+              A creative community exploring fine arts, digital art and visual expression.
+            </p>
+            <div class="flex items-center justify-center gap-4 mt-8 anim-fade anim-delay-3">
+              <button class="btn-primary font-body font-medium text-white bg-terra"
+                style="padding:12px 26px; border-radius:999px; font-size:14px; border:none; cursor:pointer;">Buy My Art</button>
+              <button class="btn-secondary font-body font-medium text-white border-2 border-white"
+                style="padding:12px 26px; border-radius:999px; font-size:14px; background:transparent; cursor:pointer;">Gallery</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider dots -->
+        <div style="position:absolute; bottom:30px; left:50%; transform:translateX(-50%); z-index:20; display:flex; gap:8px;" id="sliderDots"></div>
+      </header>
+
+      <!-- ABOUT SECTION -->
+      <section id="about" style="padding-top:90px; padding-bottom:90px; opacity:0; animation:slideInUp 0.8s ease forwards 0.3s;">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
+          <div class="flex-shrink-0" style="width:420px; max-width:100%;">
+            <div class="relative w-full" style="height:460px; border-radius:28px; overflow:hidden; background:linear-gradient(135deg, #E8DED2 0%, #D6A190 50%, #C8745A 100%);">
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 420 460">
+                <ellipse cx="210" cy="340" rx="140" ry="60" fill="#8FA47C" opacity="0.3"/>
+                <rect x="160" y="80" width="100" height="200" rx="12" fill="#2B1F1B" opacity="0.15"/>
+                <circle cx="210" cy="160" r="50" fill="#F5F3EF" opacity="0.4"/>
+                <rect x="120" y="200" width="180" height="120" rx="14" fill="#C8745A" opacity="0.25"/>
+                <path d="M140 300 Q210 240 280 300" stroke="#F5F3EF" stroke-width="3" fill="none" opacity="0.5"/>
+                <circle cx="170" cy="130" r="8" fill="#C8745A"/>
+                <circle cx="200" cy="115" r="8" fill="#8FA47C"/>
+                <circle cx="230" cy="125" r="8" fill="#D6A190"/>
+                <circle cx="250" cy="145" r="8" fill="#2B1F1B" opacity="0.5"/>
+                <line x1="130" y1="380" x2="290" y2="360" stroke="#F5F3EF" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+                <line x1="140" y1="400" x2="270" y2="385" stroke="#2B1F1B" stroke-width="3" stroke-linecap="round" opacity="0.15"/>
+              </svg>
+              <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/30 backdrop-blur-sm">
+                <p class="font-body text-bark text-xs font-medium">🎨 Artistic Expression</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-1">
+            <span class="font-body text-terra font-semibold" style="font-size:12px; letter-spacing:2px; text-transform:uppercase;">Who We Are</span>
+            <h2 id="aboutTitle" class="font-heading text-bark mt-3" style="font-size:34px; font-weight:600; line-height:1.3;">About Our Club</h2>
+            <p class="font-body text-muted mt-5" style="font-size:16px; line-height:1.7;">We are a vibrant collective of artists, designers, and creative thinkers united by our passion for visual storytelling. From canvas to code, we celebrate the diverse forms of artistic expression that connect and inspire our community.</p>
+            <p class="font-body text-muted mt-4" style="font-size:16px; line-height:1.7;">Our club hosts workshops, exhibitions, and collaborative projects that push creative boundaries and nurture emerging talent.</p>
+            <div class="flex flex-wrap gap-3 mt-8">
+              <span class="inline-flex items-center justify-center font-body text-bark text-sm font-medium bg-terra-soft" style="width:160px; height:40px; border-radius:999px;">Fine Arts</span>
+              <span class="inline-flex items-center justify-center font-body text-bark text-sm font-medium bg-terra-soft" style="width:160px; height:40px; border-radius:999px;">Digital Art</span>
+              <span class="inline-flex items-center justify-center font-body text-bark text-sm font-medium bg-terra-soft" style="width:160px; height:40px; border-radius:999px;">Photography</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ART GALLERY SECTION -->
+      <section id="gallery" style="padding-top:90px; padding-bottom:90px;">
+        <div class="max-w-[1200px] mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 id="galleryTitle" class="font-heading text-bark" style="font-size:34px; font-weight:600;">Art Gallery</h2>
+            <p class="font-body text-muted mt-3" style="font-size:16px; line-height:1.7;">Featured works from our talented community members.</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6" id="galleryGrid"></div>
+          <div class="flex justify-center mt-10">
+            <button class="btn-primary font-body font-medium text-white bg-terra"
+              onclick="window.location.href='gallery.html';"
+              style="padding:12px 26px; border-radius:999px; font-size:14px; border:none; cursor:pointer;">Explore More</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVENTS SECTION -->
+      <section id="events" class="bg-beige-dark" style="padding-top:90px; padding-bottom:90px;">
+        <div class="max-w-[1200px] mx-auto px-6">
+          <div class="flex items-end justify-between mb-10">
+            <div>
+              <h2 id="eventsTitle" class="font-heading text-bark" style="font-size:34px; font-weight:600;">Events</h2>
+              <p class="font-body text-muted mt-2" style="font-size:16px;">Upcoming gatherings and exhibitions</p>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="scrollEvents(-1)" class="w-10 h-10 rounded-full border border-bark/20 flex items-center justify-center hover:bg-bark hover:text-beige transition-colors text-bark">
+                <i data-lucide="chevron-left" style="width:18px; height:18px;"></i>
+              </button>
+              <button onclick="scrollEvents(1)" class="w-10 h-10 rounded-full border border-bark/20 flex items-center justify-center hover:bg-bark hover:text-beige transition-colors text-bark">
+                <i data-lucide="chevron-right" style="width:18px; height:18px;"></i>
+              </button>
+            </div>
+          </div>
+          <div class="scroll-track flex gap-6 overflow-x-auto pb-4" id="eventsTrack"></div>
+        </div>
+      </section>
+
+      <!-- TEAM SECTION -->
+      <section id="team" style="padding-top:90px; padding-bottom:90px;">
+        <div class="max-w-[1200px] mx-auto px-6 text-center">
+          <h2 id="teamTitle" class="font-heading text-bark" style="font-size:34px; font-weight:600;">Meet Our Creative Visionaries</h2>
+          <p class="font-body text-muted mt-3" style="font-size:16px; line-height:1.7;">The minds shaping the direction of our creative space</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12" id="teamGrid"></div>
+          <button class="mt-10 font-body font-medium text-white bg-terra hover:bg-terra/90 transition-colors"
+            style="padding:12px 26px; border-radius:999px; font-size:14px;">Our Team</button>
+        </div>
+      </section>
+
+      <!-- ART COMMISSIONS SECTION -->
+      <section style="background:linear-gradient(90deg, #2B1F1B, #3B2B26); padding-top:60px; padding-bottom:60px;">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
+          <div class="flex-1">
+            <h2 id="commissionTitle" class="font-heading text-white" style="font-size:34px; font-weight:600;">Art Commissions</h2>
+            <p id="commissionDesc" class="font-body text-white/70 mt-5" style="font-size:16px; line-height:1.7;">
+              Want a unique piece of art? Our talented members create custom artwork — portraits, illustrations, murals, and digital pieces tailored to your vision.
+            </p>
+            <div class="mt-8 space-y-4">
+              <div class="flex items-start gap-4">
+                <i data-lucide="check" style="width:24px; height:24px; color:#C8745A; flex-shrink:0; margin-top:2px;"></i>
+                <span class="font-body text-white" style="font-size:16px;">Custom portraits &amp; illustrations</span>
+              </div>
+              <div class="flex items-start gap-4">
+                <i data-lucide="check" style="width:24px; height:24px; color:#C8745A; flex-shrink:0; margin-top:2px;"></i>
+                <span class="font-body text-white" style="font-size:16px;">Digital art &amp; graphic design</span>
+              </div>
+              <div class="flex items-start gap-4">
+                <i data-lucide="check" style="width:24px; height:24px; color:#C8745A; flex-shrink:0; margin-top:2px;"></i>
+                <span class="font-body text-white" style="font-size:16px;">Wall murals &amp; large-scale pieces</span>
+              </div>
+            </div>
+            <button class="mt-8 font-body font-medium text-white bg-terra hover:bg-terra/90 transition-colors"
+              style="padding:12px 26px; border-radius:999px; font-size:14px;">Request Commission</button>
+          </div>
+          <div class="flex-shrink-0" style="width:280px; height:240px; position:relative;">
+            <div class="absolute top-0 right-0 w-28 h-28 rounded-[28px] bg-terra/40"></div>
+            <div class="absolute top-16 left-6 w-32 h-32 rounded-[28px] bg-terra-soft/30"></div>
+            <div class="absolute bottom-12 right-8 w-24 h-24 rounded-[28px] bg-olive/20"></div>
+            <div class="absolute bottom-0 left-0 w-20 h-20 rounded-[28px] bg-terra/25"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWS & UPDATES SECTION -->
+      <section style="padding-top:90px; padding-bottom:90px;">
+        <div class="max-w-[1200px] mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 id="newsTitle" class="font-heading text-bark" style="font-size:34px; font-weight:600;">News &amp; Updates</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="newsGrid"></div>
+        </div>
+      </section>
+
+      <!-- LET'S CREATE TOGETHER SECTION -->
+      <section id="contact" style="background:#F2ECE5; padding-top:90px; padding-bottom:90px;">
+        <div class="max-w-[1200px] mx-auto px-6 text-center">
+          <h2 id="contactTitle" class="font-heading text-bark" style="font-size:34px; font-weight:600;">Let's Create Together</h2>
+          <p id="contactSubtitle" class="font-body text-muted mt-3" style="font-size:16px; line-height:1.7;">
+            Have a question, want to join, or just say hi? We'd love to hear from you.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12" id="contactCardsGrid"></div>
+        </div>
+      </section>
+
+      <!-- INSTAGRAM PREVIEW STRIP -->
+      <section style="padding-top:60px; padding-bottom:60px;">
+        <div class="max-w-[1200px] mx-auto px-6">
+          <div class="flex items-center justify-center gap-4 flex-wrap" id="instagramStrip"></div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="bg-footer-bg" style="padding-top:60px; padding-bottom:40px;">
+        <div class="max-w-[1200px] mx-auto px-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 class="font-heading text-white text-xl font-bold mb-6">Let's Create Together</h3>
+              <div class="space-y-4 mb-6">
+                <div>
+                  <p class="font-body text-white/50 text-sm" style="font-size:12px; letter-spacing:1px; text-transform:uppercase;">Email</p>
+                  <p id="footerEmail" class="font-body text-white mt-2" style="font-size:16px;">flagroartclub@iiserbpr.ac.in</p>
+                </div>
+                <div>
+                  <p class="font-body text-white/50 text-sm" style="font-size:12px; letter-spacing:1px; text-transform:uppercase;">Location</p>
+                  <p id="footerAddress" class="font-body text-white mt-2" style="font-size:16px;">Permanent Campus Address (Laudigam):
+                             IISER Berhampur Vigyanpuri,At/Po: -Laudigam, Konisi,Police Station - Golanthara,Dist. - Ganjam, Odisha - 760003, India. 
+                  <P id="footerAddress" class="font-body text-white mt-2" style="font-size:16px;">Transit Campus Address (ITI Premises):Govt. ITI Premises,Engineering School Junction, NH-59,Berhampur, District - Ganjam,Odisha, India - 760010.</P></p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-terra hover:border-terra transition-colors">
+                  <i data-lucide="instagram" style="width:16px; height:16px;"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-terra hover:border-terra transition-colors">
+                  <i data-lucide="twitter" style="width:16px; height:16px;"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-terra hover:border-terra transition-colors">
+                  <i data-lucide="facebook" style="width:16px; height:16px;"></i>
+                </a>
+              </div>
+            </div>
+            <div>
+              <form id="feedbackForm" style="display:flex; flex-direction:column; gap:12px;">
+                <input type="text" placeholder="Your Name" class="font-body"
+                  style="background:#2A2220; border-radius:8px; height:42px; padding:0 16px; color:#E8DED2; font-size:14px; outline:none;">
+                <input type="email" placeholder="Your Email" class="font-body"
+                  style="background:#2A2220; border-radius:8px; height:42px; padding:0 16px; color:#E8DED2; font-size:14px; outline:none;">
+                <textarea placeholder="Message" class="font-body"
+                  style="background:#2A2220; border-radius:8px; padding:12px 16px; color:#E8DED2; font-size:14px; min-height:100px; resize:none; outline:none; font-family:DM Sans,sans-serif;"></textarea>
+                <button type="submit" class="btn-primary font-body font-medium text-white bg-terra"
+                  style="padding:12px 26px; border-radius:999px; font-size:14px; border:none; cursor:pointer; align-self:flex-start;">Send Message</button>
+              </form>
+            </div>
+          </div>
+          <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <span class="font-heading text-white font-bold" style="font-size:18px;">Flagro</span>
+            <p class="font-body text-white/30" style="font-size:13px;">© 2025 Art Adda. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- end app-root -->
+
+    <script src="homepage.js"></script>
+  </body>
+</html>
